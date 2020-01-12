@@ -36,7 +36,7 @@
                         <div class="col-md-6">
                             <div class="social-grid">
                                 <ul class="list-unstyled text-right">
-                                   
+                                <a class="navbar-brand float-right" style="color : black;" href="logout.php" class="text-right"><h2>Logout</h2></a>
                                 </ul>
                             </div>
                         </div>
@@ -45,12 +45,9 @@
             </div>
             <!--header--->
             <header class="header-container">
-                <div class="container">
+                
                     <div class="top-row">
                         <div class="row">
-                            <div class="col-md-2 col-sm-6 col-xs-6">
-                                                  
-                            </div>
                             <div class="col-md-8 col-sm-12 col-xs-12 remove-padd">
                                 <nav class="navbar navbar-default">
                                     <div class="navbar-header page-scroll">
@@ -60,7 +57,7 @@
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
                                         </button>
-
+                                        
                                     </div>
 
                                     <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
@@ -83,7 +80,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </header>
 
 
@@ -94,6 +90,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Penyuluhan</title>
+  
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
@@ -118,8 +115,15 @@
               <div class="card">
                 <div class="card-body">
                   <center>
-                  <p class="card-title">PENYULUHAN</p>
+                  <p class="card-title"><h2>PENYULUHAN</h2></p>
                 </center>
+
+                <tr>
+                <p><h4>Pengajuan jadwal yang diajukan pada hari ini, bisa melakukan penyuluhan mulai tanggal :
+                 </h4></p>
+                <?php echo date('d F Y',strtotime("+7 day")); ?>
+                </tr>
+                <tr></tr>
 
                 <div class="row"> <!--membuat wrap grup kolom horizontal-->
                   <div class="col-md-6"> <!--membuat grid sebanyak 12-->

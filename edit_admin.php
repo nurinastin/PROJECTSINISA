@@ -118,7 +118,7 @@
               <div class="card">
                 <div class="card-body">
                   <center>
-                  <p class="card-title">EDIT DATA</p>
+                  <p class="card-title"><h3>EDIT DATA</h3></p>
                 </center>
 
                 <?php 
@@ -134,6 +134,7 @@
                     //mengubah baris data yang dipilih menjadi pecahan array
                 ?>
                 <form action="update_admin.php" method="post">
+                
                 <!--mendefinisikan tindakan yang dilakukan oleh form dikirimkan-->		
                     <table>
                         <tr>
@@ -150,6 +151,15 @@
                             <!--menginputkan nama-->
                             <td><input type="text" name="nama_instansi" value="<?php echo $data['nama_instansi'] ?>"></td>					
                         </tr>
+                        <tr>
+                        <td>Nama</td>
+                            <td>
+                                <!--menginputkan nim-->
+                                <input type="hidden" name="status" value="<?php echo $data['status'] ?>">
+                                <!--value terbentuk karena data yang terdapat pada inputan di variabel id-->
+                                <input type="text" name="status" value="<?php echo $data['status'] ?>">
+                            </td>					
+                        </tr>	
                         <tr>
                             <td>Tanggal Input</td>
                             <!--menginputkan kelas-->

@@ -22,6 +22,14 @@
         <script src="js/custom.js" type="text/javascript"></script>
     </head>
     <body>
+        <?php
+        session_start();
+
+        if(!$_SESSION['level'] == 'user'){
+            header("location:loginlogout/Login/indexlogin.php?pesan=gagal");
+        }
+        
+        ?>
         <div id="page">
             <!---header top---->
             <div class="top-header">
@@ -33,25 +41,17 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="index.php" class="text-right">Logout</a>
+                            <a class="navbar-brand" href="logout.php" class="text-right">Logout</a>
                     </div>
                 </div>
             </div>
 
             <!--header--->
             <header class="header-container">
-                <div class="container">
+                
                     <div class="top-row">
                         <div class="row">
-                            <div class="col-md-2 col-sm-6 col-xs-6">
-                                <div id="logo">
-                                    <!--<a href="index.html"><img src="imagesp/SINISA.png" alt="logo"></a> </!-->
-                                    <a href="index.php"><span>SI-NISA</span>home</a>
-                                </div>                       
-                            </div>
-                            <div class="col-sm-6 visible-sm">
-                                <div class="text-right"><button type="button" class="book-now-btn">Akun</button></div>
-                            </div>
+                            
                             <div class="col-md-8 col-sm-12 col-xs-12 remove-padd">
                                 <nav class="navbar navbar-default">
                                     <div class="navbar-header page-scroll">
@@ -64,17 +64,27 @@
 
                                     </div>
                                     <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
+                                      <nav class="navbar-row">
+                                        <div class="navbar-brand-wrapper d-flex justify-content-center">
+                                          <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
+                                            <a class="navbar-brand brand-logo" href="index.php"></a>
+                                            <a class="navbar-brand brand-logo-mini" href="index.php"></a>
+                                          </div>  
+                                          <img width="250" src="imagesp/SINISA.png" alt="">
+                                        </div>
+                                      </nav>
+
+                                    <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
                                         <ul class="list-unstyled nav1 cl-effect-10">
                                             <li><a  data-hover="Beranda" class="active"><span>Beranda</span></a></li>
                                             <li><a data-hover="Tentang"  href="about.html"><span>Tentang</span></a></li>
                                             <li><a data-hover="Hubungi Kami" href="contact.html"><span>Hubungi Kami</span></a></li>
                                         </ul>
-
                                     </div>
+                                    
                                 </nav>
                             </div>
-                            
-                        </div>
+                        
                     </div>
                 </div>
             </header>
@@ -120,7 +130,7 @@
                         <div class="col-md-6 col-sm-6 col-xs-12 width-50">
                             <div class="service-details text-center">
                                 <div class="service-image">
-                                    <img alt="image" class="img-responsive" src="images/icons/key.png">
+                                    <img alt="image" class="img-responsive" src="images/icons/key.png" a href="indexpenyuluhan.php">
                                 </div>
                                 <h4><a href="indexpenyuluhan.php">PENYULUHAN</a></h4>
                             </div>
@@ -128,7 +138,7 @@
                         <div class="col-md-6 col-sm-6 col-xs-12 mt-25">
                             <div class="service-details text-center">
                                 <div class="service-image">
-                                    <img alt="image" class="img-responsive" src="images/icons/car.png">
+                                    <img alt="image" class="img-responsive" src="images/icons/car.png" a href="trysinisa/sewa.php">
                                 </div>
                                 <h4><a href="trysinisa/sewa.php">SEWA ALAT</a></h4>
                             </div>

@@ -1,9 +1,10 @@
-<?php    //echo $_SESSION["staffname"];
-    if(isset($_SESSION["staffId"]) && $_SESSION["staffId"] != NULL)
-        {        
-?> 
-<a class="navbar-brand">Welcome   
-<?php echo $_SESSION["staffname"];  ?></a>
-<a href="logout.php" class="navbar-brand"><strong>Logout</strong></a>
-<?php}
+<?php 
+// mengaktifkan session php
+session_start();
+ 
+// menghapus semua session
+session_destroy();
+ 
+// mengalihkan halaman ke halaman login
+header("location:loginlogout/Login/indexlogin.php");
 ?>

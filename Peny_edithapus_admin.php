@@ -58,7 +58,7 @@
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
                                         </button>
-
+                                        
                                     </div>
 
                                     <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
@@ -116,20 +116,16 @@
               <div class="card">
                 <div class="card-body">
                   <center>
-                  <p class="card-title">EDIT PENGAJUAN JADWAL</p>
+                  <p class="card-title"><h3>PENYULUHAN ADMIN</h3></p>
                 </center>
 
                 <div class="row"> <!--membuat wrap grup kolom horizontal-->
-                <div class="col-md-6"> <!--membuat grid sebanyak 12-->
-                 <a href="jadwal_penyuluhan.php" type=button class="btn btn-primary btn-block">Jadwal Penyuluhan</a> <!--wes wor-->
+                
+                 <a type=button-block class="btn btn-primary btn-block"><h4>Jadwal Penyuluhan</h4></a> <!--wes wor-->
                     <!-- <div class="bg-primary text-center text-white">Jadwal Penyuluhan</div> menampilkan banyaknya kolom -->
                     <br/>
                   </div>
-                  <div class="col-md-6"> <!--membuat grid sebanyak 12-->
-                    <a href="pengajuan_jadwal.php" button class="btn btn-primary btn-block">Pengajuan Jadwal</a> <!--menampilkan banyaknya kolom-->
-                    <br/>
-                  </div> <!--kolom yang muncul adalah 1 kolom, karena pembagian grid hanya 12-->
-                  </div>
+                </div>
                  
                         <!--membuat tabel dengan border 1-->
                         <h3></h3>
@@ -165,7 +161,7 @@
                                 <td>
                                     <a class="edit" href="edit_admin.php?id=<?php echo $data['id']; ?>">Edit</a> |
                                     <!--menghubungkan ke edit.php dari data id-->
-                                    <a class="hapus" href="hapus.php?id=<?php echo $data['id']; ?>">Hapus</a>	
+                                    <a class="hapus" href="hapus_admin.php?id=<?php echo $data['id']; ?>">Hapus</a>	
                                     <!--menghubungkan ke hapus.php dari data id-->				
                                 </td>
                             </tr>

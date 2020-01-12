@@ -43,6 +43,47 @@
 	          
 	        </ul>
 	      </div>
+		  <header class="header-container">
+                <div class="container">
+                    <div class="top-row">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-6 col-xs-6">
+                                                  
+                            </div>
+                            <div class="col-md-8 col-sm-12 col-xs-12 remove-padd">
+                                <nav class="navbar navbar-default">
+                                    <div class="navbar-header page-scroll">
+                                        <button data-target=".navbar-ex1-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+
+                                    </div>
+
+                                    <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
+                                      <nav class="navbar-row">
+                                        <div class="navbar-brand-wrapper d-flex justify-content-center">
+                                          <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
+                                            <a class="navbar-brand brand-logo" href="index.php"><img src="imagesp/SINISA.png" alt="logo"/></a>
+                                            <a class="navbar-brand brand-logo-mini" href="index.php"><img src="imagesp/SINISA.png" alt="logo"/></a>
+                                          </div>  
+                                        </div>
+                                      </nav>
+                                        <ul class="list-unstyled nav1 cl-effect-10">
+                                            <li><a  data-hover="Beranda" href="index.php"><span>Beranda</span></a></li>
+                                            <li><a data-hover="Tentang"  href="about.html"><span>Tentang</span></a></li>
+                                            <li><a data-hover="Hubungi Kami" href="contact.html"><span>Hubungi Kami</span></a></li>
+                                        </ul>
+                                    </div>
+                                    
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
 	    </div>
 	  </nav>
     <!-- END nav -->
@@ -52,7 +93,7 @@
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
           <div class="col-md-9 ftco-animate pb-5">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Beranda <i class="ion-ios-arrow-forward"></i></a></span> <span>Tentang Kami <i class="ion-ios-arrow-forward"></i></span></p>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Beranda <i class="ion-ios-arrow-forward"></i></a></span> <span>Tentang Kami <i class="ion-ios-arrow-forward"></i></span></p>
             <h1 class="mb-3 bread">Pilih Alat Pertanian</h1>
           </div>
         </div>

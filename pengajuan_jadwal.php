@@ -36,7 +36,7 @@
                         <div class="col-md-6">
                             <div class="social-grid">
                                 <ul class="list-unstyled text-right">
-                                   
+                                <a class="navbar-brand float-right" style="color : black;" href="logout.php" class="text-right"><h2>Logout</h2></a>
                                 </ul>
                             </div>
                         </div>
@@ -45,12 +45,9 @@
             </div>
             <!--header--->
             <header class="header-container">
-                <div class="container">
+                
                     <div class="top-row">
                         <div class="row">
-                            <div class="col-md-2 col-sm-6 col-xs-6">
-                                                  
-                            </div>
                             <div class="col-md-8 col-sm-12 col-xs-12 remove-padd">
                                 <nav class="navbar navbar-default">
                                     <div class="navbar-header page-scroll">
@@ -60,15 +57,15 @@
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
                                         </button>
-
+                                        
                                     </div>
 
                                     <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
                                       <nav class="navbar-row">
                                         <div class="navbar-brand-wrapper d-flex justify-content-center">
                                           <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-                                            <a class="navbar-brand brand-logo" href="index.php"><img src="imagesp/SINISA.png" alt="logo"/></a>
-                                            <a class="navbar-brand brand-logo-mini" href="index.php"><img src="imagesp/SINISA.png" alt="logo"/></a>
+                                            <a class="navbar-brand brand-logo" href="index_admin.php"><img src="imagesp/SINISA.png" alt="logo"/></a>
+                                            <a class="navbar-brand brand-logo-mini" href="index_admin.php"><img src="imagesp/SINISA.png" alt="logo"/></a>
                                           </div>  
                                         </div>
                                       </nav>
@@ -83,7 +80,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </header>
 
 
@@ -118,8 +114,16 @@
               <div class="card">
                 <div class="card-body">
                   <center>
-                  <p class="card-title">PENGAJUAN JADWAL</p>
+                  <p class="card-title"><h3>PENGAJUAN JADWAL</h3></p>
                 </center>
+
+                <tr>
+                <p><h4>Pengajuan jadwal yang diajukan pada hari ini, bisa melakukan penyuluhan mulai tanggal :
+                 </h4></p>
+                <?php echo date('d F Y',strtotime("+7 day")); ?>
+                </tr>
+                <tr>
+                <p><h4>Jadwal penyuluhan yang telah dibuat tidak bisa dibatalkan. Pastikan anda membuat jadwal yang tepat.</h4></p></tr>
 
                 <div class="row"> <!--membuat wrap grup kolom horizontal-->
                 <div class="col-md-6"> <!--membuat grid sebanyak 12-->
@@ -138,7 +142,7 @@
                       <thead>
 
                       <div class="container-fluid">
-                        <form action="input_aksi.php" method="post" enctype="multipart/form-data">	
+                        <form action="input_aksi.php" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>	
                         <table>
                             <tr>
                                 <td>Nama</td>
@@ -154,49 +158,37 @@
                             </tr>
                             <tr>
                                 <td for="tgloutput">Tanggal Pelaksanaan</td>
-                               <td><input type="date" name="tgloutput" id="tgloutput" value="<?date('Y-m-d')?>" /></td>				
+                               <td><input type="date" name="tgloutput" id="tgloutput" min="<?= date('Y-m-d',strtotime("+7 day"));?>" value="<?date('Y-m-d')?>" required></td>	
+                               <div class="invalid-feedback">
+                                    Please provide a valid zip.
+                                </div>			
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><input type="submit" value="tambah"></td>					
+                                <td><input type="submit" value="Ajukan" name="submit"></td>					
                             </tr>				
                         </table>
                         </form>
 
-                        <!--membuat tabel dengan border 1-->
-                        <h3></h3>
-                        <table border="1" class="table">
-                            <tr>
-                            <!--kolom pada tabel-->
-                                <th>No</th>
-                                <th>Nama</th>
-                                <th>Status</th>
-                                <th>Instansi</th>
-                                <th>Tanggal Input</th>	
-                                <th>Tanggal Pelaksanaan</th>
-                                
-                            </tr>
                             <?php 
-                            include "koneksi.php";//menyisipkan koneksi.php untuk menginputkan data ke database
-                            $query_mysql = mysqli_query($host,"SELECT * FROM penyuluhan")or die(mysql_error());
-                            $nomor = 1; 
-                            //variabel nomor dengan patokan 1 untuk di looping di tabelnya
-                            //while itu perulangan tanpa batas
-                            while($data = mysqli_fetch_array($query_mysql)){
-                                //mengubah baris data yang dipilih menjadi pecahan array
+                            //code simpan
+                            if (isset($_POST['submit']) > 0) {
+                              echo "
+                              <script>
+                              alert('Data Berhasil Diajukan!!!');
+                              document.location.href='indexpenyuluhan.php';
+                              </script>
+                              ";
+                            } else {
+                              echo "
+                              <script>
+                              alert('Data Gagal Diajukan!!!');
+                              document.location.href='pengajuan_jadwal.php;
+                              </script>
+                              ";
+                            }
                             ?>
-                            <tr>
-                                <!--variabel untuk menampung suatu data-->
-                                <td><?php echo $nomor++; ?></td> <!--perulangan pada variabel nomor-->
-                                <td><?php echo $data['nama']; ?></td> <!--variabel nim-->
-                                <td><?php echo $data['status']; ?></td> <!--variabel nama-->
-                                <td><?php echo $data['nama_instansi']; ?></td> <!--variabel kelas-->
-                                <td><?php echo $data['tanggal_input']; ?></td> <!--variabel alamat-->
-                                <td><?php echo $data['tanggal_output']; ?></td> <!--variabel jk-->
-                            </tr>
-                            <?php } ?>
-                        </table>
-                            </div>
+
                             <!-- /.container-fluid -->
 
                       </tbody>
@@ -294,6 +286,26 @@
   <script src="js/dataTables.bootstrap4.js"></script>
   <!-- End custom js for this page-->
 </body>
+
+<script>
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
 
 </html>
 

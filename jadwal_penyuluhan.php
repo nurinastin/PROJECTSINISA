@@ -36,7 +36,7 @@
                         <div class="col-md-6">
                             <div class="social-grid">
                                 <ul class="list-unstyled text-right">
-                                   
+                                <a class="navbar-brand float-right" style="color : black;" href="logout.php" class="text-right"><h2>Logout</h2></a>
                                 </ul>
                             </div>
                         </div>
@@ -44,48 +44,42 @@
                 </div>
             </div>
             <!--header--->
-            <header class="header-container">
-                <div class="container">
-                    <div class="top-row">
-                        <div class="row">
-                            <div class="col-md-2 col-sm-6 col-xs-6">
-                                                  
-                            </div>
-                            <div class="col-md-8 col-sm-12 col-xs-12 remove-padd">
-                                <nav class="navbar navbar-default">
-                                    <div class="navbar-header page-scroll">
-                                        <button data-target=".navbar-ex1-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-                                            <span class="sr-only">Toggle navigation</span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </button>
-
-                                    </div>
-
-                                    <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
-                                      <nav class="navbar-row">
-                                        <div class="navbar-brand-wrapper d-flex justify-content-center">
-                                          <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-                                            <a class="navbar-brand brand-logo" href="index.php"><img src="imagesp/SINISA.png" alt="logo"/></a>
-                                            <a class="navbar-brand brand-logo-mini" href="index.php"><img src="imagesp/SINISA.png" alt="logo"/></a>
-                                          </div>  
-                                        </div>
-                                      </nav>
-                                        <ul class="list-unstyled nav1 cl-effect-10">
-                                            <li><a  data-hover="Beranda" href="index.php"><span>Beranda</span></a></li>
-                                            <li><a data-hover="Tentang"  href="about.html"><span>Tentang</span></a></li>
-                                            <li><a data-hover="Hubungi Kami" href="contact.html"><span>Hubungi Kami</span></a></li>
-                                        </ul>
-                                    </div>
+        <header class="header-container">
+                
+                <div class="top-row">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-12 col-xs-12 remove-padd">
+                            <nav class="navbar navbar-default">
+                                <div class="navbar-header page-scroll">
+                                    <button data-target=".navbar-ex1-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
                                     
-                                </nav>
-                            </div>
+                                </div>
+
+                                <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
+                                  <nav class="navbar-row">
+                                  <a class="navbar-brand brand-logo" href="index.php"><img width="250" src="imagesp/SINISA.png" alt="logo"/></a>
+                                    <div class="navbar-brand-wrapper d-flex justify-content-center">
+                                      <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">                                          
+                                      </div>  
+                                    </div>
+                                  </nav>
+                                    <ul class="list-unstyled nav1 cl-effect-10">
+                                        <li><a  data-hover="Beranda" href="index.php"><span>Beranda</span></a></li>
+                                        <li><a data-hover="Tentang"  href="about.html"><span>Tentang</span></a></li>
+                                        <li><a data-hover="Hubungi Kami" href="contact.html"><span>Hubungi Kami</span></a></li>
+                                    </ul>
+                                </div>
+                                
+                            </nav>
                         </div>
                     </div>
                 </div>
-            </header>
-
+        </header>
 
             <!--end-->
 
@@ -121,6 +115,13 @@
                   <p class="card-title">JADWAL PENYULUHAN</p>
                 </center>
 
+                <tr>
+                <p><h4>Pengajuan jadwal yang diajukan pada hari ini, bisa melakukan penyuluhan mulai tanggal :
+                 </h4></p>
+                <?php echo date('d F Y',strtotime("+7 day")); ?>
+                </tr>
+                <tr></tr>
+
                 <div class="row"> <!--membuat wrap grup kolom horizontal-->
                   <div class="col-md-6"> <!--membuat grid sebanyak 12-->
                  <a href="jadwal_penyuluhan.php" type=button class="btn btn-primary btn-block">Jadwal Penyuluhan</a> <!--wes wor-->
@@ -132,6 +133,32 @@
                     <br/>
                   </div> <!--kolom yang muncul adalah 1 kolom, karena pembagian grid hanya 12-->
                   </div>
+
+                  <form action="jadwal_penyuluhan.php" method="get">
+                    <label>Cari :</label>
+                    <input type="text" name="cari">
+                    <input type="submit" value="Cari">
+                </form>
+                
+                <?php 
+                if(isset($_GET['cari'])){
+                    $cari = $_GET['cari'];
+                    echo "<b>Hasil pencarian : ".$cari."</b>";
+                }
+                ?>
+                
+                    <?php 
+                
+                    if(isset($_GET['cari'])){
+                        include "koneksi.php";
+                        $cari = $_GET['cari'];
+                        $data = mysqli_query($host,"SELECT * FROM penyuluhan where nama like '%".$cari."%'");				
+                    }else{
+                        include "koneksi.php";
+                       
+                        $data = mysqli_query($host,"SELECT * FROM penyuluhan");		
+                    }
+                    ?>
                  
                   <div class="table-responsive">
                     <table id="recent-purchases-listing" class="table">
@@ -166,7 +193,7 @@
                                 <td><?php echo $data['nama']; ?></td> <!--variabel nim-->
                                 <td><?php echo $data['status']; ?></td> <!--variabel nama-->
                                 <td><?php echo $data['nama_instansi']; ?></td> <!--variabel kelas-->
-                                <td><?php echo $data['tanggal_input']; ?></td> <!--variabel alamat-->
+                                <td><?php echo $data['tanggal_input']; ?></td> <!--variabel alamat--> 
                                 <td><?php echo $data['tanggal_output']; ?></td> <!--variabel jk-->
                             </tr>
                             <?php } ?>
