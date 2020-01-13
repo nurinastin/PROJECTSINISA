@@ -1,3 +1,33 @@
+<?php
+require 'fungsi.php';
+
+//variabel untuk menangkap id
+$id = $_GET["id"];
+//variabel untukmenampilkan data yang telah diubah
+$data = tampil("SELECT * FROM penyuluhan WHERE id=$id")[0];
+
+if (isset($_POST["submit"])) {
+//cek apakah data berhasil diubah atau tidak dengan menampilkan pop up
+  if (ubah($_POST) > 0){
+      
+    echo "
+    <script>
+      alert('Data berhasil diubah!!!');
+      document.location.href='Peny_edithapus_admin.php';
+    </script>
+    ";
+    exit;
+  } else {
+    echo "
+    <script>
+      alert('Data tidak ada yang dirubah!!!');
+      document.location.href='Peny_edithapus_admin.php';
+    </script>
+    ";
+  }
+}
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -113,78 +143,42 @@
     
     
       <!-- partial -->
-          <div class="row">
-            <div class="col-md-12 stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <center>
-                  <p class="card-title"><h3>EDIT DATA</h3></p>
-                </center>
-
-                <?php 
-                include "koneksi.php"; //menyisipkan file koneksi.php
-                $id = $_GET['id']; //menyimpan data id yang akan dikirim melalui perantara URL
-                $query_mysql = mysqli_query($host, "SELECT * FROM penyuluhan WHERE id='$id'")or die(mysql_error());
-                /*argumen pertama fungsi mysql_query(). Pada bagian inilah kita menulis query MySQL yang berisi 
-                data pada tabel siswa. 
-                Query tersebut selanjutnya akan dikirim kepada MySQL Server untuk diproses.
-                Jika MySQL gagal diakses, maka fungsi die() akan memerintahkan PHP untuk menghentikan program*/
-                $nomor = 1;
-                while($data = mysqli_fetch_array($query_mysql)){
-                    //mengubah baris data yang dipilih menjadi pecahan array
-                ?>
-                <form action="update_admin.php" method="post">
-                
-                <!--mendefinisikan tindakan yang dilakukan oleh form dikirimkan-->		
-                    <table>
-                        <tr>
-                            <td>Nama</td>
-                            <td>
-                                <!--menginputkan nim-->
-                                <input type="hidden" name="nama" value="<?php echo $data['nama'] ?>">
-                                <!--value terbentuk karena data yang terdapat pada inputan di variabel id-->
-                                <input type="text" name="nama" value="<?php echo $data['nama'] ?>">
-                            </td>					
-                        </tr>	
-                        <tr>
-                            <td>Instansi</td>
-                            <!--menginputkan nama-->
-                            <td><input type="text" name="nama_instansi" value="<?php echo $data['nama_instansi'] ?>"></td>					
-                        </tr>
-                        <tr>
-                        <td>Nama</td>
-                            <td>
-                                <!--menginputkan nim-->
-                                <input type="hidden" name="status" value="<?php echo $data['status'] ?>">
-                                <!--value terbentuk karena data yang terdapat pada inputan di variabel id-->
-                                <input type="text" name="status" value="<?php echo $data['status'] ?>">
-                            </td>					
-                        </tr>	
-                        <tr>
-                            <td>Tanggal Input</td>
-                            <!--menginputkan kelas-->
-                            <td><input type="date" name="tglinput" id="tglinput" value="<?=date('Y-m-d')?>" /></td>					
-                        </tr>	
-                        <tr>
-                            <td>Tanggal Output</td>
-                            <!--menginputkan alamat-->
-                            <td><input type="date" name="tgloutput" id="tgloutput" value="<?date('Y-m-d')?>" /></td>					
-                        </tr>	
-                    
-                        <tr>
-                            <td></td>
-                            <!--menyimpan data-->
-                            <td><input type="submit" value="Simpan"></td>					
-                        </tr>				
-                    </table>
-                </form>
-                <?php } ?>
-
-                        </div>
-                        <!-- /.container-fluid -->
-
-                    </div>
-                    <!-- End of Main Content -->
+<div class="container">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header">Ubah Data Penyuluhan</div>
+      <div class="card-body">
+      <form method="POST" action="">
+        <input type="hidden" name="id" value="<?= $data["id"]; ?>">
+            <div class="form-group">
+              <label for="nama">Nama</label>
+              <input type="text" class="form-control rounded-pill" id="nama" name="nama" required value="<?= $data["nama"]; ?>">
+            </div>
+            <div class="form-group">
+              <label for="nama_instansi">Nama Instansi</label>
+              <input type="text" class="form-control rounded-pill" id="nama_instansi" name="nama_instansi" required value="<?= $data["nama_instansi"]; ?>">
+            </div>
+            <div class="form-group">
+              <label for="tanggal">Tanggal</label>
+              <input type="date" class="form-control rounded-pill" id="tanggal_input" name="tanggal_input" required value="<?= $data["tanggal_input"]; ?>">
+            </div>
+            <div class="form-group">
+              <label for="tanggal_output">Tanggal output</label>
+              <input type="date" class="form-control rounded-pill" id="tanggal_output" name="tanggal_output" required value="<?= $data["tanggal_output"]; ?>">
+            </div>
+              <br><hr>
+              <div class="row">
+                <div class="left col-md-6">
+                <a href="Peny_edithapus_admin.php" class="btn btn-danger rounded-pill ml-3">Batal</a>
+              </div>
+              <div class="right col-md-6">
+                 <button class="btn btn-primary rounded-pill ml-5" type="submit" name="submit">Ubah</button>
+                 </div>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
         <!---footer--->
         <footer>
