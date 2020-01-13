@@ -38,6 +38,9 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item"><a href="sewa.php" class="nav-link">Sewa Alat</a></li>
+            <li class="nav-item"><a href="../indexpenyuluhan.php" class="nav-link">Penyuluhan</a></li>
+            <li class="nav-item"><a href="../index.php" class="nav-link">Beranda</a></li>
+            <li class="nav-item"><a href="../logout.php" class="nav-link">Logout</a></li>
 	          
 	        </ul>
 	      </div>
@@ -50,7 +53,7 @@
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
           <div class="col-md-9 ftco-animate pb-5">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="">Beranda <i class="ion-ios-arrow-forward"></i></a></span> <span>Tentang Kami <i class="ion-ios-arrow-forward"></i></span></p>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="../index.php">Beranda <i class="ion-ios-arrow-forward"></i></a></span> <span><a href="../about.php">Tentang Kami <i class="ion-ios-arrow-forward"></i></a></span></p>
             <h1 class="mb-3 bread">Detail Alat Pertanian</h1>
           </div>
         </div>
@@ -61,9 +64,7 @@
       <div class="container">
       	<div class="row justify-content-center">
       		<div class="col-md-8">
-      			<div class="car-details">
-      				<div class="img" style="background-image: url(images/traktor.jpg);"></div>
-      				
+      			
       			</div>
       		</div>
       	</div>
@@ -76,50 +77,18 @@
 							  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 
 							    <li class="nav-item">
-							      <a class="nav-link active" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Features</a>
-							    </li>
-							    <li class="nav-item">
-							      <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill" href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer" aria-expanded="true">Description</a>
+							      <p>Traktor</p>
 							    </li>
 							  </ul>
 							</div>
 
 						  <div class="tab-content" id="pills-tabContent">
 						    <div class="tab-pane fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
-						    	<div class="row">
-						    		<div class="col-md-4">
-						    			<ul class="features">
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Airconditions</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Child Seat</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>GPS</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Luggage</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Music</li>
-						    			</ul>
-						    		</div>
-						    		<div class="col-md-4">
-						    			<ul class="features">
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Seat Belt</li>
-						    				<li class="remove"><span class="ion-ios-close"></span>Sleeping Bed</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Water</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Bluetooth</li>
-						    				<li class="remove"><span class="ion-ios-close"></span>Onboard computer</li>
-						    			</ul>
-						    		</div>
-						    		<div class="col-md-4">
-						    			<ul class="features">
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Audio input</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Long Term Trips</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Car Kit</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Remote central locking</li>
-						    				<li class="check"><span class="ion-ios-checkmark"></span>Climate control</li>
-						    			</ul>
-						    		</div>
-						    	</div>
+						    	
 						    </div>
 
-						    <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel" aria-labelledby="pills-manufacturer-tab">
-						      <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-									<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+						    <div>
+						      <p>Kode Barang : S001</p>
 						    </div>
 
 						  </div>
@@ -146,8 +115,8 @@
             	<h2 class="ftco-heading-2">Mempunyai Pertanyaan?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">Jember, Jawa Timur, Indonesia</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+6285 123 456 789</span></a></li>
+	                <li><span class="icon icon-map-marker"></span><span class="text">JL. Semangka No.33 , Kelurahan Baratan, Patrang, Jember, Jawa Timur.</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text"> (0331) 567234</span></a></li>
 	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">sinisa.inka-project.com</span></a></li>
 	              </ul>
 	            </div>
@@ -157,9 +126,8 @@
         <div class="row">
           <div class="col-md-12 text-center">
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> by <a href="https://colorlib.com" target="_blank">SI-NISA</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <p><!-- copyright -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> by <a target="_blank">INKA GROUP</a></p>
           </div>
         </div>
       </div>

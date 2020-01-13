@@ -74,8 +74,8 @@
                                       </nav>
                                         <ul class="list-unstyled nav1 cl-effect-10">
                                             <li><a  data-hover="Beranda" href="index.php"><span>Beranda</span></a></li>
-                                            <li><a data-hover="Tentang"  href="about.html"><span>Tentang</span></a></li>
-                                            <li><a data-hover="Hubungi Kami" href="contact.html"><span>Hubungi Kami</span></a></li>
+                                            <li><a data-hover="Tentang"  href="about.php"><span>Tentang</span></a></li>
+                                            <li><a data-hover="Hubungi Kami" href="hubungi.php"><span>Hubungi Kami</span></a></li>
                                         </ul>
                                     </div>
                                     
