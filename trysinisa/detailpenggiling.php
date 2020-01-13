@@ -30,20 +30,18 @@
     
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Form <span>Sewa Alat</span></a>
+	      <a class="navbar-brand" href="index.html">Detail <span>Alat</span></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          
-	         
 	          <li class="nav-item"><a href="sewa.php" class="nav-link">Sewa Alat</a></li>
             <li class="nav-item"><a href="../indexpenyuluhan.php" class="nav-link">Penyuluhan</a></li>
             <li class="nav-item"><a href="../index.php" class="nav-link">Beranda</a></li>
             <li class="nav-item"><a href="../logout.php" class="nav-link">Logout</a></li>
-	         
+	          
 	        </ul>
 	      </div>
 	    </div>
@@ -56,84 +54,47 @@
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
           <div class="col-md-9 ftco-animate pb-5">
           	<p class="breadcrumbs"><span class="mr-2"><a href="../index.php">Beranda <i class="ion-ios-arrow-forward"></i></a></span> <span><a href="../about.php">Tentang Kami <i class="ion-ios-arrow-forward"></i></a></span></p>
-            <h1 class="mb-3 bread">Form Sewa Alat</h1>
+            <h1 class="mb-3 bread">Detail Alat Pertanian</h1>
           </div>
         </div>
       </div>
     </section>
 
-		<section class="ftco-section contact-section">
+    <section class="ftco-section ftco-alat-details">
       <div class="container">
-        <div class="row d-flex mb-5 contact-info justify-content-center">
-        	<div class="col-md-8">
-        		<div class="row mb-5">
-		         
-		         
-		        </div>
-          </div>
-        </div>
-        
-        <div class="row block-9 justify-content-center mb-5">
-          <div class="col-md-8 mb-md-5">
-            
-          	<h2 class="text-center">Harap isi form penyewaan alat <br>dengan benar dan lengkap</h2>
-            <form action="inputaksisewa.php" method="post">
-              <div class="form-group">
-                <label for="nama">NIK</label>
-                        <input type="text" class="form-control" name="nik" id="nik" placeholder="NIK" required>
-              </div>
-              <div class="form-group">
-                <label for="nama">Nama</label>
-                        <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama" required>
-              </div>
-              <div class="form-group">
-                <label for="nama">Nomor Telepon</label>
-                        <input type="text" class="form-control" name="no_telepon" id="no_telepon" placeholder="Nomor Telepon" required>
-              </div>
-              <div class= "form-group">
-              <label for="unit">Nama Barang</label>
-                        <select name="id_barang"  style="text-align:center;" required>
-                            <option value="" >Pilih Barang</option>
-                            <?php
-                            include "../koneksi.php";
-                            $query = mysqli_query($host, "select * from barang ") or die(mysql_error());
+      	<div class="row justify-content-center">
+      		<div class="col-md-10">
+      		
+      			</div>
+      		</div>
+      	</div>
+      	
+      	</div>
+      	<div class="row">
+      		<div class="col-md-12 pills">
+						<div class="bd-example bd-example-tabs">
+							<div class="d-flex justify-content-center">
+							  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 
-                            while ($show = mysqli_fetch_array($query)) {
-                              ?>
-                                <option value="<?=$show['id_barang']?>"><?=$show['nama_barang']?></option>
-                         <?php   } ?>
-                    </select>
-              </div>
-              <div class="form-group">
-                <label for="nama">ID Barang</label>
-                        <input type="text" class="form-control" name="id_barang" id="id_barang" placeholder="ID_Barang" required>
-              </div>
-              <div class="form-group">
-                <label for="tempat">Tanggal Sewa</label>
-                        <div class="input-group">
-                            <input type="date" class="form-control" placeholder="tanggalsewa" name="tgl_sewa" required>
-              </div>
-              <div class="form-group">
-                <label for="tempat">Tanggal Kembali</label>
-                        <div class="input-group">
-                            <input type="date" class="form-control" placeholder="tanggalkembali" name="tgl_kembali" required>
-              </div>
-              <div class="form-group">
-                <label for="nama">Asal</label>
-                        <input type="text" class="form-control" name="asal" id="asal" placeholder="Asal" required>
-              </div>
-              <div class="form-group">
-                <label for="nama">Alamat</label>
-                        <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Alamat" required>
-              </div>
-              <div class="form-group">
-                <input name="input" type="submit" value="simpan" class="btn btn-primary py-3 px-5">
-              </div>
-            </form>
-          
-          </div>
-        </div>
-        
+							    <li class="nav-item">
+							      <p>Penggiling Padi</p>
+							    </li>
+							  </ul>
+							</div>
+
+						  <div class="tab-content" id="pills-tabContent">
+						    <div class="tab-pane fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
+						    	
+						    </div>
+
+						    <div>
+						      <p>Kode Barang : S005</p>
+						    </div>
+
+						  </div>
+						</div>
+		      </div>
+				</div>
       </div>
     </section>
 
@@ -144,21 +105,19 @@
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Tentang SI-NISA</h2>
               <p>Sebuah aplikasi yang diharapkan dapat membantu kegiatan pertanian dalam menyewa alat pertanian dan penyuluhan yang diisi oleh ahli kepada para petani.</p>
-              
             </div>
           </div>
-          
-          <div class="col-md">
-             <div class="ftco-footer-widget mb-4"></div>
-          </div>
+
+          <div class="col-md"></div>
+
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
             	<h2 class="ftco-heading-2">Mempunyai Pertanyaan?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
 	                <li><span class="icon icon-map-marker"></span><span class="text">JL. Semangka No.33 , Kelurahan Baratan, Patrang, Jember, Jawa Timur.</span></li>
-	                <li><a><span class="icon icon-phone"></span><span class="text">(0331) 567234</span></a></li>
-	                <li><a><span class="icon icon-envelope"></span><span class="text">sinisa.inka-project.com</span></a></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text"> (0331) 567234</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">sinisa.inka-project.com</span></a></li>
 	              </ul>
 	            </div>
             </div>
@@ -167,9 +126,8 @@
         <div class="row">
           <div class="col-md-12 text-center">
 
-            <p><!-- Copyright -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> by <a>INKA GROUP</a>
-  </p>
+            <p><!-- copyright -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> by <a target="_blank">INKA GROUP</a></p>
           </div>
         </div>
       </div>

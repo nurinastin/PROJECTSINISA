@@ -39,51 +39,13 @@
 	        <ul class="navbar-nav ml-auto">
 	          
 	          
-	          <li class="nav-item active"><a href="" class="nav-link">Sewa Alat</a></li>
+	          <li class="nav-item"><a href="" class="nav-link">Sewa Alat</a></li>
+            <li class="nav-item"><a href="../indexpenyuluhan.php" class="nav-link">Penyuluhan</a></li>
+            <li class="nav-item"><a href="../index.php" class="nav-link">Beranda</a></li>
+            <li class="nav-item"><a href="../logout.php" class="nav-link">Logout</a></li>
 	          
 	        </ul>
 	      </div>
-		  <header class="header-container">
-                <div class="container">
-                    <div class="top-row">
-                        <div class="row">
-                            <div class="col-md-2 col-sm-6 col-xs-6">
-                                                  
-                            </div>
-                            <div class="col-md-8 col-sm-12 col-xs-12 remove-padd">
-                                <nav class="navbar navbar-default">
-                                    <div class="navbar-header page-scroll">
-                                        <button data-target=".navbar-ex1-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-                                            <span class="sr-only">Toggle navigation</span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </button>
-
-                                    </div>
-
-                                    <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
-                                      <nav class="navbar-row">
-                                        <div class="navbar-brand-wrapper d-flex justify-content-center">
-                                          <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-                                            <a class="navbar-brand brand-logo" href="index.php"><img src="imagesp/SINISA.png" alt="logo"/></a>
-                                            <a class="navbar-brand brand-logo-mini" href="index.php"><img src="imagesp/SINISA.png" alt="logo"/></a>
-                                          </div>  
-                                        </div>
-                                      </nav>
-                                        <ul class="list-unstyled nav1 cl-effect-10">
-                                            <li><a  data-hover="Beranda" href="index.php"><span>Beranda</span></a></li>
-                                            <li><a data-hover="Tentang"  href="about.html"><span>Tentang</span></a></li>
-                                            <li><a data-hover="Hubungi Kami" href="contact.html"><span>Hubungi Kami</span></a></li>
-                                        </ul>
-                                    </div>
-                                    
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
 	    </div>
 	  </nav>
     <!-- END nav -->
@@ -93,7 +55,7 @@
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
           <div class="col-md-9 ftco-animate pb-5">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Beranda <i class="ion-ios-arrow-forward"></i></a></span> <span>Tentang Kami <i class="ion-ios-arrow-forward"></i></span></p>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="../index.php">Beranda <i class="ion-ios-arrow-forward"></i></a></span> <span><a href="../about.php">Tentang <i class="ion-ios-arrow-forward"></i></a></span></p>
             <h1 class="mb-3 bread">Pilih Alat Pertanian</h1>
           </div>
         </div>
@@ -114,8 +76,8 @@
     						</div>
     					</div>
     					<div class="text p-4 text-center">
-    						<h2 class="mb-0"><a href="car-single.html">Traktor</a></h2>
-    						<p class="d-flex mb-0 d-block"><a href="formsewa.php" class="btn btn-black btn-outline-black mr-1">Sewa</a><a href="detail.php" class="btn btn-black btn-outline-black ml-1">Details</a></p>
+    						<h2 class="mb-0"><a href="">Traktor</a></h2>
+    						<p class="d-flex mb-0 d-block"><a href="formsewa.php" class="btn btn-black btn-outline-black mr-1">Sewa</a><a href="detailtraktor.php" class="btn btn-black btn-outline-black ml-1">Details</a></p>
     					</div>
     				</div>
     			</div>
@@ -130,9 +92,9 @@
     						</div>
     					</div>
     					<div class="text p-4 text-center">
-    						<h2 class="mb-0"><a href="car-single.html">Penggiling Padi</a></h2>
+    						<h2 class="mb-0"><a href="">Penggiling Padi</a></h2>
     						
-    						<p class="d-flex mb-0 d-block"><a href="formsewa.php" class="btn btn-black btn-outline-black mr-1">Sewa</a><a href="detail.php" class="btn btn-black btn-outline-black ml-1">Details</a></p>
+    						<p class="d-flex mb-0 d-block"><a href="formsewa.php" class="btn btn-black btn-outline-black mr-1">Sewa</a><a href="detailpenggiling.php" class="btn btn-black btn-outline-black ml-1">Details</a></p>
     					</div>
     				</div>
     			</div>
@@ -147,8 +109,8 @@
     						</div>
     					</div>
     					<div class="text p-4 text-center">
-    						<h2 class="mb-0"><a href="car-single.html">Penggembur Tanah</a></h2>
-    						<p class="d-flex mb-0 d-block"><a href="formsewa.php" class="btn btn-black btn-outline-black mr-1">Sewa</a> <a href="detail.php" class="btn btn-black btn-outline-black ml-1">Details</a></p>
+    						<h2 class="mb-0"><a href="car-single.html">Pelebur Tanah</a></h2>
+    						<p class="d-flex mb-0 d-block"><a href="formsewa.php" class="btn btn-black btn-outline-black mr-1">Sewa</a> <a href="detailpelebur.php" class="btn btn-black btn-outline-black ml-1">Details</a></p>
     					</div>
     				</div>
     			</div>
@@ -164,7 +126,7 @@
     					</div>
     					<div class="text p-4 text-center">
     						<h2 class="mb-0"><a href="car-single.html">Penyedot Air</a></h2>
-    						<p class="d-flex mb-0 d-block"><a href="formsewa.php" class="btn btn-black btn-outline-black mr-1">Sewa</a> <a href="detail.php" class="btn btn-black btn-outline-black ml-1">Details</a></p>
+    						<p class="d-flex mb-0 d-block"><a href="formsewa.php" class="btn btn-black btn-outline-black mr-1">Sewa</a> <a href="detailpenyedot.php" class="btn btn-black btn-outline-black ml-1">Details</a></p>
     					</div>
     				</div>
     			</div>
@@ -181,7 +143,7 @@
     					</div>
     					<div class="text p-4 text-center">
     						<h2 class="mb-0"><a href="car-single.html">Penyemprot Hama</a></h2>
-    						<p class="d-flex mb-0 d-block"><a href="formsewa.php" class="btn btn-black btn-outline-black mr-1">Sewa</a> <a href="detail.php" class="btn btn-black btn-outline-black ml-1">Details</a></p>
+    						<p class="d-flex mb-0 d-block"><a href="formsewa.php" class="btn btn-black btn-outline-black mr-1">Sewa</a> <a href="detailpenyemprot.php" class="btn btn-black btn-outline-black ml-1">Details</a></p>
     					</div>
     				</div>
     			</div>
@@ -209,8 +171,8 @@
             	<h2 class="ftco-heading-2">Mempunyai Pertanyaan?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">Jember, Jawa Timur, Indonesia</span></li>
-	                <li><a><span class="icon icon-phone"></span><span class="text">+6285 123 456 789</span></a></li>
+	                <li><span class="icon icon-map-marker"></span><span class="text">JL. Semangka No.33 , Kelurahan Baratan, Patrang, Jember, Jawa Timur.</span></li>
+	                <li><a><span class="icon icon-phone"></span><span class="text"> (0331) 567234</span></a></li>
 	                <li><a><span class="icon icon-envelope"></span><span class="text">sinisa.inka-project.com</span></a></li>
 	              </ul>
 	            </div>
@@ -220,9 +182,9 @@
         <div class="row">
           <div class="col-md-12 text-center">
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script></i> by <a href="https://colorlib.com" target="_blank">SI-NISA</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <p><!-- Copyright -->
+   Copyright &copy;<script>document.write(new Date().getFullYear());</script> by <a href="" target="_blank">INKA GROUP</a>
+  </p>
           </div>
         </div>
       </div>
