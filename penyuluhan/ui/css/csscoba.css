@@ -1,0 +1,29 @@
+//================================
+body
+{
+    font-family:sans-serif;
+}
+ 
+table
+{
+    border-collapse: collapse;
+    width: 35%;
+}
+ 
+table, th, td
+{
+    border: 1px solid gainsboro;
+    padding: 5px 1;
+}
+ 
+th
+{
+    background-color: seagreen;
+    color: white;
+}
+ 
+tr:nth-child(odd)
+{
+    background-color: darkseagreen;
+}
+//================================
