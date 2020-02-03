@@ -5,11 +5,12 @@ require 'fungsi.php';
 $id = $_GET["id"];
 //variabel untukmenampilkan data yang telah diubah
 $data = tampil("SELECT * FROM penyuluhan WHERE id=$id")[0];
-
+// var_dump($data); die;
 if (isset($_POST["submit"])) {
 //cek apakah data berhasil diubah atau tidak dengan menampilkan pop up
   if (ubah($_POST) > 0){
       
+    // die;
     echo "
     <script>
       alert('Data berhasil diubah!!!');
@@ -18,6 +19,7 @@ if (isset($_POST["submit"])) {
     ";
     exit;
   } else {
+    // die;
     echo "
     <script>
       alert('Data tidak ada yang dirubah!!!');
@@ -25,6 +27,8 @@ if (isset($_POST["submit"])) {
     </script>
     ";
   }
+
+
 }
  ?>
 
@@ -111,12 +115,35 @@ if (isset($_POST["submit"])) {
                       <input type="text" class="form-control rounded-pill" id="nama_instansi" name="nama_instansi" required value="<?= $data["nama_instansi"]; ?>">
                     </div>
                     <div class="form-group">
+                      <label for="materi">Materi</label>
+                      <input type="text" class="form-control rounded-pill" id="materi" name="materi" required value="<?= $data["materi"]; ?>">
+                    </div>
+                    <div class="form-group">
                       <label for="tanggal">Tanggal</label>
                       <input type="date" class="form-control rounded-pill" id="tanggal_input" name="tanggal_input" required value="<?= $data["tanggal_input"]; ?>">
                     </div>
                     <div class="form-group">
                       <label for="tanggal_output">Tanggal output</label>
                       <input type="date" class="form-control rounded-pill" id="tanggal_output" name="tanggal_output" required value="<?= $data["tanggal_output"]; ?>">
+                    </div>
+                    <div class="form-group">
+                      <label for="status">Status</label>
+                        <select name="status" class="form-control rounded-pill" id="status">
+                        <?php 
+                        
+                          if($data['status'] == 'sudah dikonfirmasi'){
+                        ?>
+
+                          <option selected value="sudah dikonfirmasi">Sudah Dikonfirmasi</option>
+                          <option value="belum dikonfirmasi">Belum Dikonfirmasi</option>
+
+                        <?php } else {?>
+
+                          <option value="sudah dikonfirmasi">Sudah Dikonfirmasi</option>
+                          <option selected value="belum dikonfirmasi">Belum dikonfirmasi</option>
+
+                        <?php } ?>
+                        </select>
                     </div>
                     <br><hr>
 

@@ -31,7 +31,6 @@ if(!$_SESSION['level'] == 'user'){
 
     <body>
 
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
@@ -96,7 +95,7 @@ if(!$_SESSION['level'] == 'user'){
               <li data-target="#myCarousel1" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-              <div class="item active"> <img src="beranda/images/sawah.jpg" style="width:100%; height: 500px" alt="First slide">
+              <div class="item active"> <img src="beranda/images/sawah2.jpg" style="width:100%; height: 500px" alt="First slide">
                 <div class="carousel-caption">
                   <h1>SI-NISA<br> Solusi Tani Desa</h1>
                 </div>
@@ -125,8 +124,8 @@ if(!$_SESSION['level'] == 'user'){
         </div>
 
         <!--service block--->
-        <section class="ftco-section">
-            <section class="service-block">
+        <div class="ftco-section">
+            <div class="service-block">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-12 width-50">
@@ -142,13 +141,13 @@ if(!$_SESSION['level'] == 'user'){
                                 <div class="service-image">
                                     <img alt="image" class="img-responsive" src="beranda/images/icons/tractornew.png" a href="sewaalat/sewa.php">
                                 </div>
-                                <h4><a href="sewaalat/sewa.php">SEWA ALAT</a></h4>
+                                <h4><a href="sewaalat/sewaadmin.php">SEWA ALAT</a></h4>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </section>
+            </div>
+        </div>
     </section>
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">

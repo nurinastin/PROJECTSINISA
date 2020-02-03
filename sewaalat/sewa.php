@@ -1,3 +1,7 @@
+<?php 
+  require_once '../koneksi.php';
+  $result = mysqli_query($host,"SELECT * FROM barang");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -64,90 +68,39 @@
 
     <section class="ftco-section">
     	<div class="container">
-    		<div class="row">
-    			<div class="col-md-3">
-    				<div class="car-wrap ftco-animate">
-    					<div class="img d-flex align-items-end" style="background-image: url(images/traktor.jpg);">
-    						<div class="price-wrap d-flex">
-    							<span class="rate">Rp. 100.000</span>
-    							<p class="from-day">
-    								<span>/Hari</span>
-    							</p>
-    						</div>
-    					</div>
-    					<div class="text p-4 text-center">
-    						<h2 class="mb-0"><a href="">Traktor</a></h2>
-    						<p class="d-flex mb-0 d-block"><a href="formsewa.php" class="btn btn-black btn-outline-black mr-1">Sewa</a><a href="detailtraktor.php" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-3">
-    				<div class="car-wrap ftco-animate">
-    					<div class="img d-flex align-items-end" style="background-image: url(images/penggilingpadi.jpg);">
-    						<div class="price-wrap d-flex">
-    							<span class="rate">Rp. 100.000</span>
-    							<p class="from-day">
-    								<span>/Hari</span>
-    							</p>
-    						</div>
-    					</div>
-    					<div class="text p-4 text-center">
-    						<h2 class="mb-0"><a href="">Penggiling Padi</a></h2>
-    						
-    						<p class="d-flex mb-0 d-block"><a href="formsewa.php" class="btn btn-black btn-outline-black mr-1">Sewa</a><a href="detailpenggiling.php" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-3">
-    				<div class="car-wrap ftco-animate">
-    					<div class="img d-flex align-items-end" style="background-image: url(images/penggemburtanah.jpg);">
-    						<div class="price-wrap d-flex">
-    							<span class="rate">Rp.100.000</span>
-    							<p class="from-day">
-    								<span>/Hari</span>
-    							</p>
-    						</div>
-    					</div>
-    					<div class="text p-4 text-center">
-    						<h2 class="mb-0"><a href="car-single.html">Pelebur Tanah</a></h2>
-    						<p class="d-flex mb-0 d-block"><a href="formsewa.php" class="btn btn-black btn-outline-black mr-1">Sewa</a> <a href="detailpelebur.php" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-3">
-    				<div class="car-wrap ftco-animate">
-    					<div class="img d-flex align-items-end" style="background-image: url(images/penyedotair.jpg);">
-    						<div class="price-wrap d-flex">
-    							<span class="rate">Rp.75.000</span>
-    							<p class="from-day">
-    								<span>/Hari</span>
-    							</p>
-    						</div>
-    					</div>
-    					<div class="text p-4 text-center">
-    						<h2 class="mb-0"><a href="car-single.html">Penyedot Air</a></h2>
-    						<p class="d-flex mb-0 d-block"><a href="formsewa.php" class="btn btn-black btn-outline-black mr-1">Sewa</a> <a href="detailpenyedot.php" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-    					</div>
-    				</div>
-    			</div>
 
-    			<div class="col-md-3">
+    		<?php 
+          $numcol = 4;
+          $countrow = 0;
+          $colwidth = 12 / $numcol;
+        ?>
+        <div class="row">
+          <?php while ($data = mysqli_fetch_assoc($result)) { ?>
+
+    			<div class="col-md-<?= $colwidth; ?>">
     				<div class="car-wrap ftco-animate">
-    					<div class="img d-flex align-items-end" style="background-image: url(images/penyemprot.jpg);">
+    					<div class="img d-flex align-items-end" style="background-image: url(images/<?= $data['gambar']; ?>);">
     						<div class="price-wrap d-flex">
-    							<span class="rate">Rp. 25.000</span>
+    							<span class="rate">Rp. <?= number_format($data['harga'],0,',','.') ?></span>
     							<p class="from-day">
     								<span>/Hari</span>
     							</p>
     						</div>
     					</div>
     					<div class="text p-4 text-center">
-    						<h2 class="mb-0"><a href="car-single.html">Penyemprot Hama</a></h2>
-    						<p class="d-flex mb-0 d-block"><a href="formsewa.php" class="btn btn-black btn-outline-black mr-1">Sewa</a> <a href="detailpenyemprot.php" class="btn btn-black btn-outline-black ml-1">Details</a></p>
+    						<h2 class="mb-0"><a href=""><?= $data['nama_barang']; ?></a></h2>
+    						<a href="detailbarang.php?id=<?= $data['id_barang']; ?>" class="btn btn-black btn-outline-black ml-1">Details</a></p>
     					</div>
     				</div>
     			</div>
     			
+          <?php 
+            $countrow++;
+            if ($countrow % $numcol == 0){
+              echo '</div><div class="row">';
+            }
+            }
+          ?>
     		</div>
     		
     	</div>

@@ -52,24 +52,24 @@
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
-						<input class="input100" type="password" name="password"  placeholder="Password .." required="required">
+						<input class="input100" type="password" name="password"  placeholder="Kata Sandi .." required="required">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Login
+							Masuk
 						</button>
 					</div>
 
 					<ul class="login-more p-t-50">
 						<li class="m-b-8">
 							<span class="txt1">
-								Lupa password? Klik
+								Lupa kata sandi? Klik
 							</span>
 
-							<a href="#" class="txt2">
-								Disini
+							<a href="../../lupa_password/forgot-password.php" class="txt2">
+								Setel Ulang
 							</a>
 						</li>
 

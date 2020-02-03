@@ -143,7 +143,7 @@
                         <!--kolom pada tabel-->
                             <th>No</th>
                             <th>Nama</th>
-                            <th>Status Report</th>
+                            <th>Status</th>
                             <th>Instansi</th>
                             <th>Tanggal Pengajuan</th>	
                             <th>Tanggal Pelaksanaan</th>

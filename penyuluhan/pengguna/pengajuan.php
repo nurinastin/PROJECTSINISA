@@ -138,6 +138,11 @@ if (isset($_POST['submit'])) {
                         <input type="text" class="form-control" name="nama_instansi" id="asal" placeholder="Nama Instansi" required>
               </div>
               <div class="form-group">
+                <label for="nama">Status
+                        <input type="text" class="form-control" name="status" id="status" value="<?= $data['status']; ?>" readonly>
+              </label>
+              </div>
+              <div class="form-group">
                 <label for="nama">Judul Materi</label>
                   <input type="text" class="form-control" name="materi" id="materi" placeholder="Tuliskan Judul Materi Penyuluhan Dengan Lengkap" required>
               </div>

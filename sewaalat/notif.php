@@ -5,11 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+<!--     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css"> -->
     <link rel="stylesheet" href="css/animate.css">
-    
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -27,7 +28,6 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    
       <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
           <a class="navbar-brand" href="index.html">Pemberitahuan <span>Sewa Alat</span></a>
@@ -74,27 +74,27 @@
         </div>
         
         <div class="table-responsive">
-                    <table id="recent-purchases-listing" class="table">
-                      <thead>
+<!--                     <table id="recent-purchases-listing" class="table">
+                      <thead> -->
 
                         <!--membuat tabel dengan field yang akan ditampilkan-->
                         <h3></h3>
                         <!--membuat tabel dengan border 1-->
-                        <table border="1" class="table">
-                            <tr>
-                            <!--kolom pada tabel-->
+                        <table class="table table-responsive-sm table-striped table-hover text-center">
+                            <thead class="bg-dark text-white">
+                              <tr>
                                 <th>No</th>
-                                <th>NIK</th>
                                 <th>Nama</th>
-                                <th>Nomor Telepon</th>
                                 <th>Nama Barang</th>
                                 <th>ID Barang</th>
                                 <th>Tanggal Sewa</th>
-                                <th>Tanggal Kembali</th>  
+                                <th>Tanggal Kembali</th> 
+                                <th>Lama Sewa</th>
+                                <th>Harga Sewa</th> 
                                 <th>Asal</th>
-                                <th>Alamat</th>
-                                
-                            </tr>
+                              </tr>
+                            </thead>
+                            <tbody>
                             <?php 
                             include "../koneksi.php"; 
                             $query_mysql = mysqli_query($host,"SELECT * FROM sewa")or die(mysql_error());
@@ -107,22 +107,22 @@
                             <tr>
                                 <!--variabel untuk menampung suatu data-->
                                 <td><?php echo $nomor++; ?></td>
-                                <td><?php echo $data['nik']; ?></td> <!--perulangan pada variabel nik-->
                                 <td><?php echo $data['nama']; ?></td> <!--variabel nama-->
-                                <td><?php echo $data['no_telepon']; ?></td> <!--variabel no telp-->
                                 <td><?php echo $data['nama_barang']; ?></td> <!--variabel nama barang-->
                                 <td><?php echo $data['id_barang']; ?></td> <!--variabel id barang-->
                                 <td><?php echo $data['tanggal_sewa']; ?></td> <!--variabel tgl sewa-->
                                 <td><?php echo $data['tanggal_kembali']; ?></td> <!--variabel tgl kembali-->
+                                <td><?php echo $data['jumlah_hari']; ?></td>
+                                <td><?php echo $data['harga_sewa']; ?></td>
                                 <td><?php echo $data['asal']; ?></td> <!--variabel asal-->
-                                <td><?php echo $data['alamat']; ?></td> <!--variabel alamat-->
                             </tr>
                             <?php } ?>
+                            </tbody>
                         </table>
                         <h3>Jumlah Penyewa : <?php echo $nomor-1; ?> </h3>
                         <!--menampilkan jumlah sekelas, di -1 karena index mulai dri 1 bukan 0-->
-                      </thead>
-                    </table>
+<!--                       </thead>
+                    </table> -->
                   </div>
                 </div>
               </section>
@@ -185,8 +185,6 @@
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
    
    </body> 

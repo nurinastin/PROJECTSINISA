@@ -16,13 +16,15 @@ function tampil($query){
 	
 
 function ubah($data){
- 	global $host;
+	 global $host;
+	 
  	$id = htmlspecialchars($data["id"]);
 	 $nama = htmlspecialchars($data["nama"]);
 	 $instansi = htmlspecialchars($data["nama_instansi"]);
     $tanggal_input = htmlspecialchars($data["tanggal_input"]);
     $tanggal_output = htmlspecialchars($data["tanggal_output"]);
 	$materi = htmlspecialchars($data["materi"]);
+	$status = htmlspecialchars($data["status"]);
 
  	//query update data
  	$query = "UPDATE penyuluhan SET
@@ -30,10 +32,12 @@ function ubah($data){
 		nama_instansi = '$instansi',
         tanggal_input = '$tanggal_input',
         tanggal_output = '$tanggal_output',
-		materi = '$materi'
+		materi = '$materi',
+		status = '$status'
+
  		where id = '$id'
  		";
- 	$result = mysqli_query($chost,$query);
+ 	$result = mysqli_query($host,$query);
  	return mysqli_affected_rows($host);
  }
 

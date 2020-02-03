@@ -7,7 +7,7 @@
         $query_mysql = filterTable($query);
     }
     else {
-        $query = "SELECT * FROM penyuluhan";
+        $query = "SELECT * FROM penyuluhan ORDER BY status DESC";
         $query_mysql = filterTable($query);
     }
 
@@ -60,7 +60,7 @@
 	        <ul class="navbar-nav ml-auto">
 	          
 	          
-	          <li class="nav-item"><a href="../../sewaalat/sewa.php" class="nav-link">Sewa Alat</a></li>
+	          <li class="nav-item"><a href="../../sewaalat/sewaadmin.php" class="nav-link">Sewa Alat</a></li>
             <li class="nav-item"><a href="indexpenyuluhan_admin.php" class="nav-link">Penyuluhan</a></li>
             <li class="nav-item"><a href="../../index_admin.php" class="nav-link">Beranda</a></li>
             <li class="nav-item"><a href="../../logout.php" class="nav-link">Logout</a></li>
@@ -125,7 +125,8 @@
                             <!--variabel untuk menampung suatu data-->
                             <td><?php echo $nomor++; ?></td> <!--perulangan pada variabel nomor-->
                             <td><?php echo $data['nama']; ?></td> <!--variabel nama-->
-                            <td><?php echo $data['status']; ?></td> <!--variabel status-->
+                            <td><?php echo $data['status']; ?>
+                            </td>
                             <td><?php echo $data['nama_instansi']; ?></td> <!--variabel instansi-->
                             <td><?php echo $data['tanggal_input']; ?></td> <!--variabel tanggal input-->
                             <td><?php echo $data['tanggal_output']; ?></td> <!--variabel tanggal pelaksanaan-->
@@ -133,8 +134,9 @@
                             <td>
                                 <a class="edit" href="edit_admin.php?id=<?php echo $data['id']; ?>">Edit</a> |
                                 <!--menghubungkan ke edit.php dari data id-->
-                                <a class="hapus" href="hapus_admin.php?id=<?php echo $data['id']; ?>">Hapus</a>	
-                                <!--menghubungkan ke hapus.php dari data id-->				
+                                <a class="hapus" href="hapus_admin.php?id=<?php echo $data['id']; ?>">Hapus</a> |	
+                                <!--menghubungkan ke hapus.php dari data id-->	
+                                <a class="konfirmasi" href="konfirmasi_admin.php?id=<?php echo $data['id']; ?>">Konfirmasi</a>			
                             </td>
                         </tr>
 

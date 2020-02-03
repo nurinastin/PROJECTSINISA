@@ -1,3 +1,11 @@
+<?php 
+  require_once '../koneksi.php';
+  if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $result = mysqli_query($host,"SELECT * FROM barang WHERE id_barang = '$id'");
+    $data = mysqli_fetch_assoc($result);
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,7 +38,7 @@
     
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Form <span>Sewa Alat</span></a>
+	      <a class="navbar-brand" href="">Form <span>Sewa Alat</span></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -77,7 +85,7 @@
           <div class="col-md-8 mb-md-5">
             
           	<h2 class="text-center">Harap isi form penyewaan alat <br>dengan benar dan lengkap</h2>
-            <form action="inputaksisewa.php" method="post">
+            <form action="" id="form-input" method="POST">
               <div class="form-group">
                 <label for="nama">NIK</label>
                         <input type="text" class="form-control" name="nik" id="nik" placeholder="NIK" required>
@@ -90,33 +98,37 @@
                 <label for="nama">Nomor Telepon</label>
                         <input type="text" class="form-control" name="no_telepon" id="no_telepon" placeholder="Nomor Telepon" required>
               </div>
-              <div class= "form-group">
-              <label for="unit">Nama Barang</label>
-                        <select name="id_barang"  style="text-align:center;" required>
-                            <option value="" >Pilih Barang</option>
-                            <?php
-                            include "../koneksi.php";
-                            $query = mysqli_query($host, "select * from barang ") or die(mysql_error());
-
-                            while ($show = mysqli_fetch_array($query)) {
-                              ?>
-                                <option value="<?=$show['id_barang']?>"><?=$show['nama_barang']?></option>
-                         <?php   } ?>
-                    </select>
+              <div class="form-group">
+                <label for="nama">Nama Barang
+                        <input type="text" class="form-control" name="namabarang" id="namabarang" value="<?= $data['nama_barang']; ?>" readonly>
+              </label>
               </div>
               <div class="form-group">
-                <label for="nama">ID Barang</label>
-                        <input type="text" class="form-control" name="id_barang" id="id_barang" placeholder="ID_Barang" required>
+                <label for="nama">ID Barang
+                        <input type="text" class="form-control" name="idbarang" id="idbarang" value="<?= $data['id_barang']; ?>" readonly>
+              </label>
               </div>
               <div class="form-group">
                 <label for="tempat">Tanggal Sewa</label>
                         <div class="input-group">
-                            <input type="date" class="form-control" placeholder="tanggalsewa" name="tgl_sewa" required>
+                            <input id="tgl_sewa" type="date" min="<?= date('Y-m-d'); ?>" max="" class="form-control" placeholder="tanggalsewa" name="tgl_sewa" required>
+              </div>
               </div>
               <div class="form-group">
                 <label for="tempat">Tanggal Kembali</label>
                         <div class="input-group">
-                            <input type="date" class="form-control" placeholder="tanggalkembali" name="tgl_kembali" required>
+                            <input id="tgl_kembali" type="date" min="" max="" class="form-control" placeholder="tanggalkembali" name="tgl_kembali" required>
+               </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="nama">Lama Sewa</label>
+                        <input type="text" class="form-control" name="lamasewa" value="" id="lamasewa" placeholder="Lama Sewa" required readonly>
+                          
+              </div>
+              <div class="form-group">
+                <label for="nama">Harga Total Sewa</label>
+                        <input type="text" value="" class="form-control" name="harga_sewa" id="harga_sewa" placeholder="Harga Sewa" required readonly>
               </div>
               <div class="form-group">
                 <label for="nama">Asal</label>
@@ -127,10 +139,12 @@
                         <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Alamat" required>
               </div>
               <div class="form-group">
-                <input name="input" type="submit" value="simpan" class="btn btn-primary py-3 px-5">
+                <input name="input" id="input" type="submit" value="simpan" class="btn btn-primary py-3 px-5">
               </div>
             </form>
-          
+            <?php
+              
+            ?>
           </div>
         </div>
         
@@ -181,7 +195,8 @@
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-3.4.1.js"></script>  
+<!--   <script src="js/jquery.min.js"></script> -->
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -195,9 +210,60 @@
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
+  <script src="js/sweetalert2.js"></script>
+<!--   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script> -->
   <script src="js/main.js"></script>
-    
+
+  <script>
+    $(document).ready(function(){
+      
+      $('#tgl_sewa').change(function(){
+        let tgl_sewa = $('#tgl_sewa').val();
+        $('#tgl_kembali').attr('min',tgl_sewa);
+      });
+
+      $('input[type=date]').change(function(){
+        let tgl_sewa = $('#tgl_sewa').val();
+        let tgl_kembali = $('#tgl_kembali').val();
+        let tgl1 = parseInt(tgl_sewa.slice(8,10));
+        let tgl2 = parseInt(tgl_kembali.slice(8,10));
+        let lama = tgl2 - tgl1;
+        let harga = <?= $data['harga'] ?>;
+          if (!lama) {
+            $('#lamasewa').val(0);
+            $('#harga_sewa').val(0);
+          }else if(tgl2 < tgl1){
+            let lama = tgl1 - tgl2;
+            $('#lamasewa').val(lama);
+            $('#harga_sewa').val(lama * harga);
+          }else{
+            $('#lamasewa').val(lama);
+            $('#harga_sewa').val(lama * harga);
+          }
+      });
+
+      $('#input').on('click',function(e){
+        let data1 = $('#form-input').serialize();
+        $.ajax({
+          url:'inputaksisewa.php',
+          method:'post',
+          data:data1,
+          success:function(data){
+            Swal.fire(
+              'Data Berhasil Disimpan!',
+              'Klik untuk lanjut!',
+              'success'
+            )
+              window.location.href='notif.php'
+          }
+        });
+        e.preventDefault();
+      });
+
+    });
+  </script>
+
+
   </body>
 </html>

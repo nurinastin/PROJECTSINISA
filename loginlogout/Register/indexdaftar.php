@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Register</title>
+		<title>SINISA | Daftar</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- LINEARICONS -->
@@ -55,12 +55,15 @@ if (isset($_POST['submit'])) {
 					<div class="form-holder">
 						<input type="text" class="form-control" placeholder="Alamat" name="alamat">
 					</div>
+					<div class="form-holder">
+						<input type="text" class="form-control" placeholder="Email" name="email_pengguna">
+					</div>
 					
 					<div class="form-holder">
 						<input type="text" class="form-control" placeholder="Username" name="username">
 					</div>
 					<div class="form-holder">
-						<input type="password" class="form-control" placeholder="Password" name="password">
+						<input type="password" class="form-control" placeholder="Kata Sandi" name="password">
 					</div>
 					<button type="submit" name="submit">
 						<span>Daftar</span>
